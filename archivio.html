@@ -1,11 +1,140 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Archivio</title>
+    <title>Archivio Fotografico – Ciro Ciscognetti</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+
+        }
+
+        .gallery {
+            max-width: 1100px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 0 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Modal */
+        #modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.85);
+        }
+
+        #modal img {
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            margin: 5% auto;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255,255,255,0.3);
+        }
+
+        #modal:active {
+            display: none;
+        }
+    </style>
+
+    <script>
+        function openModal(src) {
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.src = src;
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
 </head>
+
 <body>
-    <h1>Archivio</h1>
-    <p>Pagina in costruzione.</p>
-</body>
-</html>
+
+<header>
+    <h1>Archivio Fotografico</h1>
+</header>
+
+<div id="modal" onclick="closeModal()">
+    <img id="modal-img" src="">
+</div>
+
+<div class="gallery">
+
+<img src="2025 - A.jpg" onclick="openModal('2025 - A.jpg')" alt="2025 A">
+    <img src="2025 -.jpg" onclick="openModal('2025 -.jpg')" alt="2025">
+    <img src="2015 - A.jpg" onclick="openModal('2015 - A.jpg')" alt="2015 A">
+    <img src="2015 -.jpg" onclick="openModal('2015 -.jpg')" alt="2015">
+
+<img src="2014 -.JPG" onclick="openModal('2014 -.JPG')" alt="2014">
+    <img src="2013 -.JPG" onclick="openModal('2013 -.JPG')" alt="2013">
+    <img src="2012 -.jpg" onclick="openModal('2012 -.jpg')" alt="2012">
+    <img src="2010 -.jpg" onclick="openModal('2010 -.jpg')" alt="2010">
+
+<img src="2010 - F.jpg" onclick="openModal('2010 - F.jpg')" alt="2010 F">
+    <img src="2010 - E.jpg" onclick="openModal('2010 - E.jpg')" alt="2010 E">
+    <img src="2010 - D.jpg" onclick="openModal('2010 - D.jpg')" alt="2010 D">
+    <img src="2010 - C.jpg" onclick="openModal('2010 - C.jpg')" alt="2010 C">
+
+<img src="2010 - B.jpg" onclick="openModal('2010 - B.jpg')" alt="2010 B">
+    <img src="2010 - A.jpg" onclick="openModal('2010 - A.jpg')" alt="2010 A">
+    <img src="2008.jpg" onclick="openModal('2008.jpg')" alt="2008">
+    <img src="2008 A.jpg" onclick="openModal('2008 A.jpg')" alt="2008 A">
+
+<img src="2007 -.jpg" onclick="openModal('2007 -.jpg')" alt="2007">
+    <img src="2007 -.JPG" onclick="openModal('2007 -.JPG')" alt="2007">
+    <img src="2007 - B.jpg" onclick="openModal('2007 - B.jpg')" alt="2007 B">
+    <img src="2007 - A.jpg" onclick="openModal('2007 - A.jpg')" alt="2007 A">
+
+<img src="2005.jpg" onclick="openModal('2005.jpg')" alt="2005">
+    <img src="2005 - A.jpg" onclick="openModal('2005 - A.jpg')" alt="2005 A">
+    <img src="2003.jpg" onclick="openModal('2003.jpg')" alt="2003">
+    <img src="2003 - C.jpg" onclick="openModal('2003 - C.jpg')" alt="2003 C">
+
+<img src="2003 - B.jpg" onclick="openModal('2003 - B.jpg')" alt="2003 B">
+    <img src="2003 - A.jpg" onclick="openModal('2003 - A.jpg')" alt="2003 A">
+    <img src="2002 -.jpg" onclick="openModal('2002 -.jpg')" alt="2002">
+    <img src="2001 -.jpg" onclick="openModal('2001 -.jpg')" alt="2001">
+
+<img src="2000 -.jpg" onclick="openModal('2000 -.jpg')" alt="2000">
+    <img src="1997 -.jpg" onclick="openModal('1997 -.jpg')" alt="1997">
+    <img src="1997 - B.jpg" onclick="openModal('1997 - B.jpg')" alt="1997 B">
+    <img src="1997 - A.jpg" onclick="openModal('1997 - A.jpg')" alt="1997 A">
+
+<img src="1996 -.jpg" onclick="openModal('1996 -.jpg')" alt="1996">
+    <img src="1996 - A.jpg" onclick="openModal('1996 - A.jpg')" alt="1996 A">
+    <img src="1994 -.jpg" onclick="openModal('1994 -.jpg')" alt="1994">
+    <img src="1989 -.jpg" onclick="openModal('1989 -.jpg')" alt="1989">
