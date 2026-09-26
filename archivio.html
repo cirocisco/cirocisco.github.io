@@ -1,140 +1,258 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Archivio Fotografico – Ciro Ciscognetti</title>
-
+    <title>Archivio fotografico 2008–2025</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #eee;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
         }
 
-        header {
-            background-color: #222;
-            color: white;
-            padding: 20px;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        h1, h2 {
             text-align: center;
-
+            margin-bottom: 10px;
         }
 
+        p.intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            line-height: 1.5;
+        }
+
+        /* Griglia 4 colonne */
         .gallery {
-            max-width: 1100px;
-            margin: 30px auto;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 15px;
         }
 
-        .gallery img {
-            width: 100%;
-            border-radius: 6px;
+        .gallery-item {
             cursor: pointer;
-            box-shadow: 0 0 8px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
+            border: 1px solid #444;
+            padding: 5px;
+            background-color: #1a1a1a;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .gallery img:hover {
+        .gallery-item:hover {
             transform: scale(1.03);
+            box-shadow: 0 0 10px #666;
         }
 
-        /* Modal */
-        #modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
+        .gallery-item img {
             width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.85);
+            height: auto;
+            display: block;
         }
 
-        #modal img {
-            display: block;
+        .caption {
+            margin-top: 5px;
+            font-size: 0.9rem;
+            text-align: center;
+            color: #ccc;
+        }
+
+        /* Overlay per espansione */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .overlay-content {
             max-width: 90%;
             max-height: 90%;
-            margin: 5% auto;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(255,255,255,0.3);
+            text-align: center;
         }
 
-        #modal:active {
-            display: none;
+        .overlay-content img {
+            max-width: 100%;
+            max-height: 80vh;
+        }
+
+        .overlay-caption {
+            margin-top: 10px;
+            color: #eee;
+            font-size: 1rem;
+        }
+
+        .overlay-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 1.5rem;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
-
-    <script>
-        function openModal(src) {
-            const modal = document.getElementById('modal');
-            const modalImg = document.getElementById('modal-img');
-            modalImg.src = src;
-            modal.style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-    </script>
 </head>
-
 <body>
 
-<header>
-    <h1>Archivio Fotografico</h1>
-</header>
+<div class="container">
+    <h1>Archivio fotografico</h1>
+    <h2>Dal 2008 al 2025</h2>
 
-<div id="modal" onclick="closeModal()">
-    <img id="modal-img" src="">
+    <p class="intro">
+        Selezione di foto dal 2008 al 2025, organizzate in blocchi da quattro su quattro colonne.
+        Clicca su una foto per espanderla a schermo intero e vedere meglio i dettagli.
+    </p>
+
+    <!-- GALLERIA: blocchi da 4, in ordine come li hai scritti -->
+    <div class="gallery">
+
+        <!-- Blocco 1 -->
+        <div class="gallery-item" data-src="2025 -.jpg" data-caption="2025 -.jpg">
+            <img src="2025 -.jpg" alt="2025 -.jpg">
+            <div class="caption">2025 -.jpg</div>
+        </div>
+
+        <div class="gallery-item" data-src="2025 - A.jpg" data-caption="2025 - A.jpg">
+            <img src="2025 - A.jpg" alt="2025 - A.jpg">
+            <div class="caption">2025 - A.jpg</div>
+        </div>
+
+        <div class="gallery-item" data-src="2015 -.jpg" data-caption="2015 -.jpg">
+            <img src="2015 -.jpg" alt="2015 -.jpg">
+            <div class="caption">2015 -.jpg</div>
+        </div>
+
+        <div class="gallery-item" data-src="2015 - A.jpg" data-caption="2015 - A.jpg">
+            <img src="2015 - A.jpg" alt="2015 - A.jpg">
+            <div class="caption">2015 - A.jpg</div>
+        </div>
+
+        <!-- Blocco 2 -->
+        <div class="gallery-item" data-src="2014 -.JPG" data-caption="2014 -.JPG">
+            <img src="2014 -.JPG" alt="2014 -.JPG">
+            <div class="caption">2014 -.JPG</div>
+        </div>
+
+        <div class="gallery-item" data-src="2013 -.JPG" data-caption="2013 -.JPG">
+            <img src="2013 -.JPG" alt="2013 -.JPG">
+            <div class="caption">2013 -.JPG</div>
+        </div>
+
+        <div class="gallery-item" data-src="2012 -.jpg" data-caption="2012 -.jpg">
+            <img src="2012 -.jpg" alt="2012 -.jpg">
+            <div class="caption">2012 -.jpg</div>
+        </div>
+
+        <div class="gallery-item" data-src="2010 -.jpg" data-caption="2010 -.jpg">
+            <img src="2010 -.jpg" alt="2010 -.jpg">
+            <div class="caption">2010 -.jpg</div>
+        </div>
+
+        <!-- Blocco 3 -->
+        <div class="gallery-item" data-src="2010 - F.JPG" data-caption="2010 - F.JPG">
+            <img src="2010 - F.JPG" alt="2010 - F.JPG">
+            <div class="caption">2010 - F.JPG</div>
+        </div>
+
+        <div class="gallery-item" data-src="2010 - E.jpg" data-caption="2010 - E.jpg">
+            <img src="2010 - E.jpg" alt="2010 - E.jpg">
+            <div class="caption">2010 - E.jpg</div>
+        </div>
+
+        <div class="gallery-item" data-src="2010 - D.JPG" data-caption="2010 - D.JPG">
+            <img src="2010 - D.JPG" alt="2010 - D.JPG">
+            <div class="caption">2010 - D.JPG</div>
+        </div>
+
+        <div class="gallery-item" data-src="2010 - C.JPG" data-caption="2010 - C.JPG">
+            <img src="2010 - C.JPG" alt="2010 - C.JPG">
+            <div class="caption">2010 - C.JPG</div>
+        </div>
+
+        <!-- Blocco 4 -->
+        <div class="gallery-item" data-src="2010 - B_.JPG" data-caption="2010 - B_.JPG">
+            <img src="2010 - B_.JPG" alt="2010 - B_.JPG">
+            <div class="caption">2010 - B_.JPG</div>
+        </div>
+
+        <div class="gallery-item" data-src="2010 - A.JPG" data-caption="2010 - A.JPG">
+            <img src="2010 - A.JPG" alt="2010 - A.JPG">
+            <div class="caption">2010 - A.JPG</div>
+        </div>
+
+        <div class="gallery-item" data-src="2008 -.jpg" data-caption="2008 -.jpg">
+            <img src="2008 -.jpg" alt="2008 -.jpg">
+            <div class="caption">2008 -.jpg</div>
+        </div>
+
+        <div class="gallery-item" data-src="2008 - A.jpg" data-caption="2008 - A.jpg">
+            <img src="2008 - A.jpg" alt="2008 - A.jpg">
+            <div class="caption">2008 - A.jpg</div>
+        </div>
+
+    </div>
 </div>
 
-<div class="gallery">
+<!-- Overlay per espansione -->
+<div class="overlay" id="overlay">
+    <div class="overlay-close" id="overlayClose">&times;</div>
+    <div class="overlay-content">
+        <img id="overlayImage" src="" alt="">
+        <div class="overlay-caption" id="overlayCaption"></div>
+    </div>
+</div>
 
-<img src="2025 - A.jpg" onclick="openModal('2025 - A.jpg')" alt="2025 A">
-    <img src="2025 -.jpg" onclick="openModal('2025 -.jpg')" alt="2025">
-    <img src="2015 - A.jpg" onclick="openModal('2015 - A.jpg')" alt="2015 A">
-    <img src="2015 -.jpg" onclick="openModal('2015 -.jpg')" alt="2015">
+<script>
+    // Gestione click sulle miniature
+    const items = document.querySelectorAll('.gallery-item');
+    const overlay = document.getElementById('overlay');
+    const overlayImage = document.getElementById('overlayImage');
+    const overlayCaption = document.getElementById('overlayCaption');
+    const overlayClose = document.getElementById('overlayClose');
 
-<img src="2014 -.JPG" onclick="openModal('2014 -.JPG')" alt="2014">
-    <img src="2013 -.JPG" onclick="openModal('2013 -.JPG')" alt="2013">
-    <img src="2012 -.jpg" onclick="openModal('2012 -.jpg')" alt="2012">
-    <img src="2010 -.jpg" onclick="openModal('2010 -.jpg')" alt="2010">
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            const src = item.getAttribute('data-src');
+            const caption = item.getAttribute('data-caption');
+            overlayImage.src = src;
+            overlayCaption.textContent = caption;
+            overlay.style.display = 'flex';
+        });
+    });
 
-<img src="2010 - F.jpg" onclick="openModal('2010 - F.jpg')" alt="2010 F">
-    <img src="2010 - E.jpg" onclick="openModal('2010 - E.jpg')" alt="2010 E">
-    <img src="2010 - D.jpg" onclick="openModal('2010 - D.jpg')" alt="2010 D">
-    <img src="2010 - C.jpg" onclick="openModal('2010 - C.jpg')" alt="2010 C">
+    overlayClose.addEventListener('click', () => {
+        overlay.style.display = 'none';
+        overlayImage.src = '';
+    });
 
-<img src="2010 - B.jpg" onclick="openModal('2010 - B.jpg')" alt="2010 B">
-    <img src="2010 - A.jpg" onclick="openModal('2010 - A.jpg')" alt="2010 A">
-    <img src="2008.jpg" onclick="openModal('2008.jpg')" alt="2008">
-    <img src="2008 A.jpg" onclick="openModal('2008 A.jpg')" alt="2008 A">
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.style.display = 'none';
+            overlayImage.src = '';
+        }
+    });
+</script>
 
-<img src="2007 -.jpg" onclick="openModal('2007 -.jpg')" alt="2007">
-    <img src="2007 -.JPG" onclick="openModal('2007 -.JPG')" alt="2007">
-    <img src="2007 - B.jpg" onclick="openModal('2007 - B.jpg')" alt="2007 B">
-    <img src="2007 - A.jpg" onclick="openModal('2007 - A.jpg')" alt="2007 A">
-
-<img src="2005.jpg" onclick="openModal('2005.jpg')" alt="2005">
-    <img src="2005 - A.jpg" onclick="openModal('2005 - A.jpg')" alt="2005 A">
-    <img src="2003.jpg" onclick="openModal('2003.jpg')" alt="2003">
-    <img src="2003 - C.jpg" onclick="openModal('2003 - C.jpg')" alt="2003 C">
-
-<img src="2003 - B.jpg" onclick="openModal('2003 - B.jpg')" alt="2003 B">
-    <img src="2003 - A.jpg" onclick="openModal('2003 - A.jpg')" alt="2003 A">
-    <img src="2002 -.jpg" onclick="openModal('2002 -.jpg')" alt="2002">
-    <img src="2001 -.jpg" onclick="openModal('2001 -.jpg')" alt="2001">
-
-<img src="2000 -.jpg" onclick="openModal('2000 -.jpg')" alt="2000">
-    <img src="1997 -.jpg" onclick="openModal('1997 -.jpg')" alt="1997">
-    <img src="1997 - B.jpg" onclick="openModal('1997 - B.jpg')" alt="1997 B">
-    <img src="1997 - A.jpg" onclick="openModal('1997 - A.jpg')" alt="1997 A">
-
-<img src="1996 -.jpg" onclick="openModal('1996 -.jpg')" alt="1996">
-    <img src="1996 - A.jpg" onclick="openModal('1996 - A.jpg')" alt="1996 A">
-    <img src="1994 -.jpg" onclick="openModal('1994 -.jpg')" alt="1994">
-    <img src="1989 -.jpg" onclick="openModal('1989 -.jpg')" alt="1989">
+</body>
+</html>
