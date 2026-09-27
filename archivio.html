@@ -211,69 +211,85 @@
             <div class="caption">2008 - A.jpg</div>
         </div>
 
-    </div>
+<div class="gallery-item" data-src="2007 -.jpg" data-caption="2007 -.jpg">
+    <img src="2007 -.jpg" alt="2007 -.jpg">
+    <div class="caption">2007 -.jpg</div>
 </div>
 
-<!-- Overlay per espansione -->
-<div class="overlay" id="overlay">
-    <div class="overlay-close" id="overlayClose">&times;</div>
-    <div class="overlay-content">
-        <img id="overlayImage" src="" alt="">
-        <div class="overlay-caption" id="overlayCaption"></div>
-    </div>
+<div class="gallery-item" data-src="2007 -.JPG" data-caption="2007 -.JPG">
+    <img src="2007 -.JPG" alt="2007 -.JPG">
+    <div class="caption">2007 -.JPG</div>
 </div>
 
-<script>
-    // Gestione click sulle miniature
-    const items = document.querySelectorAll('.gallery-item');
-    const overlay = document.getElementById('overlay');
-    const overlayImage = document.getElementById('overlayImage');
-    const overlayCaption = document.getElementById('overlayCaption');
-    const overlayClose = document.getElementById('overlayClose');
+<div class="gallery-item" data-src="2007 - B.jpg" data-caption="2007 - B.jpg">
+    <img src="2007 - B.jpg" alt="2007 - B.jpg">
+    <div class="caption">2007 - B.jpg</div>
+</div>
 
-    items.forEach(item => {
-        item.addEventListener('click', () => {
-            const src = item.getAttribute('data-src');
-            const caption = item.getAttribute('data-caption');
-            overlayImage.src = src;
-            overlayCaption.textContent = caption;
-            overlay.style.display = 'flex';
-        });
-    });
+<div class="gallery-item" data-src="2007 - A.JPG" data-caption="2007 - A.JPG">
+    <img src="2007 - A.JPG" alt="2007 - A.JPG">
+    <div class="caption">2007 - A.JPG</div>
+</div>
 
-    overlayClose.addEventListener('click', () => {
-        overlay.style.display = 'none';
-        overlayImage.src = '';
-    });
+<div class="gallery-item" data-src="2005 -.jpg" data-caption="2005 -.jpg">
+    <img src="2005 -.jpg" alt="2005 -.jpg">
+    <div class="caption">2005 -.jpg</div>
+</div>
 
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-            overlay.style.display = 'none';
-            overlayImage.src = '';
-        }
-    });
-</script>
-<div class="gallery">
-    <img src="2007 -.jpg" alt="2007">
-    <img src="2007 -.JPG" alt="2007">
-    <img src="2007 - B.jpg" alt="2007 B">
-    <img src="2007 - A.JPG" alt="2007 A">
+<div class="gallery-item" data-src="2005 - A.jpg" data-caption="2005 - A.jpg">
+    <img src="2005 - A.jpg" alt="2005 - A.jpg">
+    <div class="caption">2005 - A.jpg</div>
+</div>
 
-    <img src="2005 -.jpg" alt="2005">
-    <img src="2005 - A.jpg" alt="2005 A">
+<div class="gallery-item" data-src="2003 -.jpg" data-caption="2003 -.jpg">
+    <img src="2003 -.jpg" alt="2003 -.jpg">
+    <div class="caption">2003 -.jpg</div>
+</div>
 
-    <img src="2003 -.jpg" alt="2003">
-    <img src="2003 - C.jpg" alt="2003 C">
-    <img src="2003 - B.jpg" alt="2003 B">
-    <img src="2003 - A.jpg" alt="2003 A">
+<div class="gallery-item" data-src="2003 - C.jpg" data-caption="2003 - C.jpg">
+    <img src="2003 - C.jpg" alt="2003 - C.jpg">
+    <div class="caption">2003 - C.jpg</div>
+</div>
 
-    <img src="2002 -.jpg" alt="2002">
-    <img src="2001 -.jpg" alt="2001">
-    <img src="2000 -.jpg" alt="2000">
+<div class="gallery-item" data-src="2003 - B.jpg" data-caption="2003 - B.jpg">
+    <img src="2003 - B.jpg" alt="2003 - B.jpg">
+    <div class="caption">2003 - B.jpg</div>
+</div>
 
-    <img src="1997 -.jpg" alt="1997">
-    <img src="1997 - B.jpg" alt="1997 B">
-    <img src="1997 - A.jpg" alt="1997 A">
+<div class="gallery-item" data-src="2003 - A.jpg" data-caption="2003 - A.jpg">
+    <img src="2003 - A.jpg" alt="2003 - A.jpg">
+    <div class="caption">2003 - A.jpg</div>
+</div>
+
+<div class="gallery-item" data-src="2002 -.jpg" data-caption="2002 -.jpg">
+    <img src="2002 -.jpg" alt="2002 -.jpg">
+    <div class="caption">2002 -.jpg</div>
+</div>
+
+<div class="gallery-item" data-src="2001 -.jpg" data-caption="2001 -.jpg">
+    <img src="2001 -.jpg" alt="2001 -.jpg">
+    <div class="caption">2001 -.jpg</div>
+</div>
+
+<div class="gallery-item" data-src="2000 -.jpg" data-caption="2000 -.jpg">
+    <img src="2000 -.jpg" alt="2000 -.jpg">
+    <div class="caption">2000 -.jpg</div>
+</div>
+
+<div class="gallery-item" data-src="1997 -.jpg" data-caption="1997 -.jpg">
+    <img src="1997 -.jpg" alt="1997 -.jpg">
+    <div class="caption">1997 -.jpg</div>
+</div>
+
+<div class="gallery-item" data-src="1997 - B.jpg" data-caption="1997 - B.jpg">
+    <img src="1997 - B.jpg" alt="1997 - B.jpg">
+    <div class="caption">1997 - B.jpg</div>
+</div>
+
+<div class="gallery-item" data-src="1997 - A.jpg" data-caption="1997 - A.jpg">
+    <img src="1997 - A.jpg" alt="1997 - A.jpg">
+    <div class="caption">1997 - A.jpg</div>
+</div>
 </div>
 
 </body>
